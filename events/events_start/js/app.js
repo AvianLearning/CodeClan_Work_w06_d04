@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const textInput = document.querySelector("#input");     //
   textInput.addEventListener("input", handleInput);
 
+
+  const selectElement = document.querySelector("#select");  //
+  selectElement.addEventListener("select", handleSelect);
+
 });
 
 
@@ -23,4 +27,12 @@ const handleInput = function(event) {
   resultInput.textContent = `you typed ${event.target.value}`;
 
   console.log(event);
+};
+
+
+const handleSelect= function(select) {
+  const resultSelect = document.querySelector("#select-result");
+  resultSelect.textContent = `You went with:`;
+
+  console.log(select);
 };
