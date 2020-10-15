@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   select.addEventListener("change", handleSelectChange);
 
 
-  const form = document.querySelector("#form");           //  queryselector on
-  form.addEventListener("submit", handleFormSubmit);    // element to listen for
+  const form = document.querySelector("#form");           //  element queryselected on
+  form.addEventListener("submit", handleFormSubmit);    // element to listen for  (third thing is the callback)
 
 });
 
@@ -36,7 +36,7 @@ const handleSelectChange = function(event) {
 };
 
 const handleFormSubmit = function(event) {
-  event.preventDefault();
+  event.preventDefault();       //  overrides the default behaviour of the POST request made by forms in HTML which results in a page refresh which we don't want because we loose out JS state.
   console.dir(event.target);    //    this will console.dir every time that submit is pressed on the form.
   const resultParagraph = document.querySelector("#form-result");
   resultParagraph.textContent = `Your name: ${event.target.first_name.value} ${event.target.last_name.value}`;
